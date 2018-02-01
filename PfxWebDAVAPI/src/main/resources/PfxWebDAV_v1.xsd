@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema 
+	xmlns:pfxdav="http://www.ellipsis.nl/WebDAV/v1/" 
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://www.ellipsis.nl/WebDAV/v1/" 
+	version="1.0">
+
+	<xsd:simpleType name="DAVHeader">
+		<xsd:annotation>
+			<xsd:documentation>HTTP Headers for Distributed Authoring</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="DAV" />
+			<xsd:enumeration value="Depth" />
+			<xsd:enumeration value="Destination" />
+			<xsd:enumeration value="If" />
+			<xsd:enumeration value="Lock-Token" />
+			<xsd:enumeration value="Overwrite" />
+			<xsd:enumeration value="Timeout" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name="DAVStatus">
+		<xsd:annotation>
+			<xsd:documentation>HTTP Statuscodes for Distributed Authoring</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Multi-Status; 207" />
+			<xsd:enumeration value="Unprocessable Entity; 422" />
+			<xsd:enumeration value="Locked; 423" />
+			<xsd:enumeration value="Failed Dependency; 424" />
+			<xsd:enumeration value="Insufficient Storage; 507" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name="HTTPHeader">
+		<xsd:annotation>
+			<xsd:documentation>Basic HTTP header</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Allow" />
+			<xsd:enumeration value="content-length" />
+			<xsd:enumeration value="ETag" />
+			<xsd:enumeration value="If-None-Match" />
+			<xsd:enumeration value="last-modified" />
+			<xsd:enumeration value="MS-Author-Via" />
+			<xsd:enumeration value="User-Agent" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="ComplianceClass">
+		<xsd:annotation>
+			<xsd:documentation>Possible values for the DAV header</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1" />
+			<xsd:enumeration value="2" />
+			<xsd:enumeration value="3" />
+			<xsd:enumeration value="extend" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="RecursiveDepth">
+		<xsd:annotation>
+			<xsd:documentation>Possible values for the Depth header</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1" />
+			<xsd:enumeration value="2" />
+			<xsd:enumeration value="infinity" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+</xsd:schema>

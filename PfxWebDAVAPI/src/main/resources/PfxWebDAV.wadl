@@ -1,0 +1,105 @@
+<application 
+	xmlns="http://wadl.dev.java.net/2009/02" xmlns:pfxdav="http://www.ellipsis.nl/PfxWebDAV/REST/v1/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<grammars>
+		<include href="./PfxWebDAV_v1.xsd" />
+	</grammars>
+	<resources base="http://localhost:8080/">
+		<resource path="/" id="IPfxWebDAV">
+			<resource path="{uri: .*}">
+				<method name="DELETE" id="doDelete">
+					<response>
+						<representation mediaType="application/json" />
+					</response>
+				</method>
+				<method name="GET" id="doGet">
+					<doc>See https://tools.ietf.org/html/rfc4918#page-48. Either return the single resource or a representation if the
+						resource is a collection.
+					</doc>
+					<response status="200">
+						<doc>When resource is a collection</doc>
+						<representation mediaType="text/html" />
+					</response>
+					<response status="200">
+						<representation mediaType="*/*" />
+					</response>
+				</method>
+				<method name="HEAD" id="doHead">
+					<doc>See https://tools.ietf.org/html/rfc4918#page-48. HEAD is GET without body.</doc>
+					<response Status="200">
+						<representation mediaType="*/*"/>
+						<param name="last-modified" style="header" type="xsd:long">
+							<doc xml:lang="ENG">Gives the last-modified date as specified in terms of milliseconds since the epoch.</doc>
+						</param>
+						<param name="Etag" style="header" type="xsd:string">
+							<doc xml:lang="ENG">Gives the ETag associated with a resource.</doc>
+						</param>
+						<param name="content-length" style="header" type="xsd:string">
+							<doc xml:lang="ENG">gives the length of the content body in the response.</doc>
+						</param>
+						<param name="content-type" style="header" type="xsd:string">
+							<doc xml:lang="ENG">gives the mime-type of the content body in the response.</doc>
+						</param>
+					</response>
+					<response Status="403">
+						<doc xml:lang="ENG">Status code (403) indicating the server understood the request but refused to fulfill it.</doc>
+					</response>
+					<response Status="304">
+						<doc xml:lang="ENG">Status code (304) indicating that a conditional GET operation found that the resource was available and not modified.</doc>
+					</response>
+					<response Status="403">
+						<doc xml:lang="ENG">Status code (403) indicating the server understood the request but refused to fulfill it.</doc>
+					</response>
+					<response Status="405">
+						<param name="Allow" style="header" type="xsd:string">
+							<doc xml:lang="ENG">Valid actions for a specified resource.</doc>
+						</param>
+					</response>
+				</method>
+				<method name="OPTIONS" id="doOptions">
+					<response>
+						<representation mediaType="application/json"  />
+					</response>
+				</method>
+				<method name="PUT" id="doPut">
+					<response>
+						<representation mediaType="application/json"  />
+					</response>
+				</method>
+				<!-- WebDAV-extensions -->
+				<method name="COPY" id="doCopy">
+					<response>
+						<representation mediaType="application/json"  />
+					</response>
+				</method>
+				<method name="MKCOL" id="doMkcol">
+					<response>
+						<representation mediaType="application/json"  />
+					</response>
+				</method>
+				<method name="MOVE" id="doMove">
+					<response>
+						<representation mediaType="application/json"  />
+					</response>
+				</method> 
+				<method name="PROPFIND" id="doPropfind">
+					<response>
+						<representation mediaType="application/json"  />
+					</response>
+				</method>
+				<method name="PROPPATCH" id="doProppatch">
+					<response>
+						<representation mediaType="application/json"  />
+					</response>
+				</method>
+			</resource>
+			<resource path="/version">
+				<method name="GET" id="getVersion">
+					<response>
+						<representation mediaType="text/plain" element="xsd:string" />
+					</response>
+				</method>
+			</resource>
+		</resource>
+	</resources>
+</application>
