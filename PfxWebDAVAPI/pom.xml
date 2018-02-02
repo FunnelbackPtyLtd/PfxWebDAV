@@ -7,19 +7,12 @@
 		<version>2.2.0-SNAPSHOT</version>
 	</parent>
 	<artifactId>webdav-api</artifactId>
-	<properties>
-		<cxf.version>3.2.1</cxf.version>
-		<cxf-xjc.version>3.2.0</cxf-xjc.version>
-		<java.version>1.8</java.version>
-		<jaxrs.version>2.1</jaxrs.version>
-		<junit.version>4.12</junit.version>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
+	<version>1.0.0-SNAPSHOT</version>
 	<build>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.3.2</version>
+				<version>${maven-compiler-plugin.version}</version>
 				<configuration>
 					<source>${java.version}</source>
 					<target>${java.version}</target>
@@ -60,8 +53,8 @@
 		<!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
-			<artifactId>servlet-api</artifactId>
-			<version>2.5</version>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>${javax-servlet-api.version}</version>
 			<scope>provided</scope>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/javax.ws.rs/javax.ws.rs-api -->

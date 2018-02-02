@@ -5,6 +5,7 @@
 	targetNamespace="http://www.ellipsis.nl/WebDAV/v1/" 
 	version="1.0">
 
+	<!-- @deprecated, use HttpHeader-class instead 
 	<xsd:simpleType name="DAVHeader">
 		<xsd:annotation>
 			<xsd:documentation>HTTP Headers for Distributed Authoring</xsd:documentation>
@@ -19,7 +20,9 @@
 			<xsd:enumeration value="Timeout" />
 		</xsd:restriction>
 	</xsd:simpleType>
+	-->
 	
+	<!-- @deprecated, use HttpStatus-enum instead, we keep it as an example -->
 	<xsd:simpleType name="DAVStatus">
 		<xsd:annotation>
 			<xsd:documentation>HTTP Statuscodes for Distributed Authoring</xsd:documentation>
@@ -33,6 +36,7 @@
 		</xsd:restriction>
 	</xsd:simpleType>
 	
+	<!-- @deprecated, use HttpHeader-class instead 
 	<xsd:simpleType name="HTTPHeader">
 		<xsd:annotation>
 			<xsd:documentation>Basic HTTP header</xsd:documentation>
@@ -70,5 +74,6 @@
 			<xsd:enumeration value="infinity" />
 		</xsd:restriction>
 	</xsd:simpleType>
+	-->
 
 </xsd:schema>
