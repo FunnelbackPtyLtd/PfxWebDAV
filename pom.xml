@@ -6,7 +6,6 @@
 	<packaging>pom</packaging>
 	<modules>
 		<module>PfxWebDAVAPI</module>
-		<module>PfxWebDAVREST</module>
 		<module>PfxWebDAVServer</module>
 	</modules>
 	<artifactId>PfxWebDAV</artifactId>

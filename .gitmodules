@@ -1,6 +1,3 @@
 [submodule "PfxWebDAVServer"]
 	path = PfxWebDAVServer
-	url = https://github.com/ellipsisnl/PfxWebDAVServer
-[submodule "PfxWebDAVREST"]
-	path = PfxWebDAVREST
-	url = https://github.com/ellipsisnl/PfxWebDAVREST
+	url = https://github.com/mattsheppard/PfxWebDAVServer.git
