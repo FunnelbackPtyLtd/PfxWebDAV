@@ -23,6 +23,6 @@
 		<maven-compiler-plugin.version>2.3.2</maven-compiler-plugin.version>
 		<slf4j.version>1.4.3</slf4j.version>
 		<!-- internal modules -->
-		<pfxwebdav-api.version>1.0.0-SNAPSHOT</pfxwebdav-api.version>
+		<pfxwebdav-api.version>2.2.0.1-SNAPSHOT</pfxwebdav-api.version>
 	</properties>
 </project>
